@@ -1,0 +1,247 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* full screen */
+  background: url("./img/shop.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.aboutus {
+  color: red;
+  font-style: oblique;
+  font-size: 20px;
+
+}
+
+.about {
+  border: none;
+      width:450px;
+      height:40px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+}
+
+.tittle {
+  color: yellow;
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+/* Neon Text for Title */
+.neon-text {
+  font-size: 60px;
+  font-weight: bold;
+  color: #ff66ff;
+  /* neon pink */
+  text-shadow:
+    0 0 5px #ff66ff,
+    0 0 10px #ff66ff,
+    0 0 20px #ff66ff,
+    0 0 40px #ff66ff,
+    0 0 80px #ff66ff;
+  margin-bottom: 15px;
+}
+
+/* Neon Tagline */
+.neon-tagline {
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 7px #ff66ff,
+    0 0 10px #ff66ff;
+  margin-bottom: 25px;
+}
+
+/* Neon Link (clickable text instead of button) */
+.neon-link {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff66ff;
+  text-decoration: none;
+  text-shadow:
+    0 0 5px #ff66ff,
+    0 0 10px #ff66ff,
+    0 0 20px #ff66ff,
+    0 0 40px #ff33cc;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.neon-link:hover {
+  color: #ff33cc;
+  text-shadow:
+    0 0 10px #ff33cc,
+    0 0 20px #ff33cc,
+    0 0 40px #ff33cc,
+    0 0 80px #ff33cc;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Dropdown Menu */
+.menu-list {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 150px;
+}
+
+.menu-list li {
+  padding: 10px 20px;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+}
+
+.menu-list li a:hover {
+  color: #f5c542;
+}
+
+/* Show menu when active */
+.hamburger-menu.active .menu-list {
+  display: block;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+  background: #f4f6f8;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section p {
+  font-size: 18px;
+}
+
+/* Appointment Form */
+.appointment-section {
+  padding: 60px 20px;
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+.appointment-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.appointment-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointment-form input,
+.appointment-form select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus {
+  outline: 2px solid #00ccff;
+}
+
+.submit-btn {
+  padding: 14px;
+  font-size: 18px;
+  background: #00ccff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #00aaff;
+  transform: scale(1.05);
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .neon-text {
+    font-size: 28px;
+  }
+
+  .neon-tagline {
+    font-size: 16px;
+  }
+
+  .neon-link {
+    font-size: 18px;
+  }
+
+  .menu-list li a {
+    font-size: 16px;
+  }
+}
