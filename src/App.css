@@ -4,34 +4,83 @@ body {
   margin: 0;
   padding: 0;
 }
+.back-link{
+  top:0;
+  left:0;
+  position:absolute;
+  color:white;
+  font-size:30px;
+  padding:20px;
+  cursor:pointer;
+}
+.logo {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0 auto 20px; /* centers and adds space below */
+}
+.admin-panel {
+  padding: 20px;
+}
 
+.appointments-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.appointment-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.appointment-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bi{
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
 /* Hero Section */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  /* full screen */
-  background: url("./img/shop.png") no-repeat center center/cover;
+  background: #d783f0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* stack logo + text vertically */
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
   text-align: center;
 }
 
-.aboutus {
-  color: red;
-  font-style: oblique;
-  font-size: 20px;
-
+.us{
+  background: #bf6bd8;
+  height: 100vh;
 }
+
 
 .about {
   border: none;
       width:450px;
       height:40px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      margin: auto;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+    
 }
 
 .tittle {
@@ -54,60 +103,13 @@ body {
   position: relative;
   z-index: 1;
   color: white;
+  margin-top: 0;       /* remove the forced 500px gap */
   text-align: center;
 }
 
+
 /* Neon Text for Title */
-.neon-text {
-  font-size: 60px;
-  font-weight: bold;
-  color: #ff66ff;
-  /* neon pink */
-  text-shadow:
-    0 0 5px #ff66ff,
-    0 0 10px #ff66ff,
-    0 0 20px #ff66ff,
-    0 0 40px #ff66ff,
-    0 0 80px #ff66ff;
-  margin-bottom: 15px;
-}
 
-/* Neon Tagline */
-.neon-tagline {
-  font-size: 24px;
-  color: #ffffff;
-  text-shadow:
-    0 0 3px #ffffff,
-    0 0 7px #ff66ff,
-    0 0 10px #ff66ff;
-  margin-bottom: 25px;
-}
-
-/* Neon Link (clickable text instead of button) */
-.neon-link {
-  display: inline-block;
-  font-size: 22px;
-  font-weight: bold;
-  color: #ff66ff;
-  text-decoration: none;
-  text-shadow:
-    0 0 5px #ff66ff,
-    0 0 10px #ff66ff,
-    0 0 20px #ff66ff,
-    0 0 40px #ff33cc;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.neon-link:hover {
-  color: #ff33cc;
-  text-shadow:
-    0 0 10px #ff33cc,
-    0 0 20px #ff33cc,
-    0 0 40px #ff33cc,
-    0 0 80px #ff33cc;
-  transform: scale(1.05);
-}
 
 /* Hamburger Menu */
 .hamburger-menu {
@@ -174,13 +176,25 @@ body {
 .section p {
   font-size: 18px;
 }
+.apoutus{
+  color: white;
+  background: #bf6bd8;
 
+}
 /* Appointment Form */
 .appointment-section {
   padding: 60px 20px;
-  background: #222;
+  background: #bf6bd8;
   color: #fff;
   text-align: center;
+}
+.price {
+  padding: 60px 20px;
+  background: #bf6bd8;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .appointment-section h2 {

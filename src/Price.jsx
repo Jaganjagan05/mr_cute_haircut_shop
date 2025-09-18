@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
-
+import Sidebar from "./sidebar";
+import { Link } from "react-router-dom";
+import logo from "./img/logo.png";
 const Price=()=>{
     return(
-        <div className="hero">
+        <div className="price">
+            <img src={logo} alt="Logo" className="logo" />
+             <Link to="/" className="back-link">
+
+              <i className="bi bi-arrow-left"></i>
+            </Link>
+            <Sidebar />
             <p>
             <strong>Haircuts</strong>
 
