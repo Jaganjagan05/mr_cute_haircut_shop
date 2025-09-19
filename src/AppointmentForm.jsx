@@ -16,13 +16,15 @@ const AppointmentForm = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState(null); // ✅ success or error message
+  const [message, setMessage] = useState(null); // success or error message
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -35,8 +37,10 @@ const AppointmentForm = () => {
         body: JSON.stringify(formData),
       });
 
+      // Check if response is OK
       if (!res.ok) {
-        throw new Error("Failed to submit appointment");
+        const errorText = await res.text(); // Get backend error if any
+        throw new Error(errorText || "Failed to submit appointment");
       }
 
       const result = await res.json();
@@ -71,10 +75,9 @@ const AppointmentForm = () => {
       <img src={logo} alt="Logo" className="logo" />
       <h2>Book an Appointment</h2>
 
+      {/* Display message */}
       {message && (
-        <p
-          className={`message ${message.type === "success" ? "success-msg" : "error-msg"}`}
-        >
+        <p className={`message ${message.type === "success" ? "success-msg" : "error-msg"}`}>
           {message.text}
         </p>
       )}
