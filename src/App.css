@@ -1,38 +1,261 @@
-.App {
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.back-link{
+  top:0;
+  left:0;
+  position:absolute;
+  color:white;
+  font-size:30px;
+  padding:20px;
+  cursor:pointer;
+}
+.logo {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0 auto 20px; /* centers and adds space below */
+}
+.admin-panel {
+  padding: 20px;
+}
+
+.appointments-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.appointment-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.appointment-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bi{
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #d783f0;
+  display: flex;
+  flex-direction: column; /* stack logo + text vertically */
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.us{
+  background: #bf6bd8;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.about {
+  border: none;
+      width:450px;
+      height:40px;
+      margin: auto;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tittle {
+  color: yellow;
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  margin-top: 0;       /* remove the forced 500px gap */
+  text-align: center;
+}
+
+
+/* Neon Text for Title */
+
+
+/* Hamburger Menu */
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Dropdown Menu */
+.menu-list {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 150px;
+}
+
+.menu-list li {
+  padding: 10px 20px;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+}
+
+.menu-list li a:hover {
+  color: #f5c542;
+}
+
+/* Show menu when active */
+.hamburger-menu.active .menu-list {
+  display: block;
+}
+
+/* Sections */
+.section {
+  padding: 80px 20px;
+  background: #f4f6f8;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.section p {
+  font-size: 18px;
+}
+.apoutus{
+  color: white;
+  background: #bf6bd8;
+
+}
+/* Appointment Form */
+.appointment-section {
+  padding: 60px 20px;
+  background: #bf6bd8;
+  color: #fff;
+  text-align: center;
+}
+.price {
+  padding: 60px 20px;
+  background: #bf6bd8;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.appointment-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.appointment-form {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.appointment-form input,
+.appointment-form select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.appointment-form input:focus,
+.appointment-form select:focus {
+  outline: 2px solid #00ccff;
+}
+
+.submit-btn {
+  padding: 14px;
+  font-size: 18px;
+  background: #00ccff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #00aaff;
+  transform: scale(1.05);
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .neon-text {
+    font-size: 28px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .neon-tagline {
+    font-size: 16px;
+  }
+
+  .neon-link {
+    font-size: 18px;
+  }
+
+  .menu-list li a {
+    font-size: 16px;
   }
 }
